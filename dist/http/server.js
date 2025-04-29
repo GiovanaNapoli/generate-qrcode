@@ -6,9 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const env_1 = __importDefault(require("../env"));
 const route_1 = __importDefault(require("./route"));
+const port = env_1.default.PORT || 3333;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(route_1.default);
-app.listen(env_1.default.LOCAL_PORT, () => {
-    console.log(`Server is running on port ${env_1.default.LOCAL_PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
